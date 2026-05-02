@@ -19,11 +19,34 @@
     "icon": "resources/logo.png"
   },
   "nsis": {
-    "artifactName": "WExDesktopInstaller.Windows.x64.${version}.${ext}",
+    "artifactName": "WExDesktopInstaller.Windows.${arch}.${version}.${ext}",
     "oneClick": false,
     "perMachine": false,
     "allowToChangeInstallationDirectory": true,
     "deleteAppDataOnUninstall": false,
     "createStartMenuShortcut": true
+  },
+  "mac": {
+    "target": [
+      { "target": "dmg", "arch": ["arm64"] },
+      { "target": "zip", "arch": ["arm64"] }
+    ],
+    "icon": "resources/logo.png",
+    "category": "public.app-category.developer-tools",
+    "artifactName": "WExDesktopInstaller.macOS.${arch}.${version}.${ext}"
+  },
+  "dmg": {
+    "artifactName": "WExDesktopInstaller.macOS.${arch}.${version}.${ext}"
+  },
+  "linux": {
+    "target": [
+      { "target": "AppImage", "arch": ["x64"] }
+    ],
+    "icon": "resources/logo.png",
+    "category": "Development",
+    "artifactName": "WExDesktopInstaller.Linux.${arch}.${version}.${ext}"
+  },
+  "appImage": {
+    "artifactName": "WExDesktopInstaller.Linux.${arch}.${version}.${ext}"
   }
 }
